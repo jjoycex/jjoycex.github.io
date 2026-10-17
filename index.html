@@ -1,35 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joyce Xu — Engineering, Research &amp; Robotics Portfolio</title>
+<meta name="description" content="Personal portfolio of Joyce Xu — Science Olympiad Co-President, assistive robotics builder, published researcher (IASS-IWSS 2026), and MIT BWSI Basics of ASICs alumna." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet" />
+<style>
+:root {
+--bg: #faf8f5;
+--surface: #ffffff;
+--text: #1c1917;
+--text-muted: #57534e;
+--accent: #0f766e;
+--accent-soft: #ccfbf1;
+--accent-text: #115e59;
+--border: #e7e2da;
+--radius: 14px;
+--shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.05), 0 2px 6px -1px rgba(28, 25, 23, 0.03);
+}
 
-<HTML>
-  <TITLE> Joyce Xu's Personal Page </TITLE>
-  <BODY> 
-    I am co-president of Science Olympiad team in Great Neck South High school and have won Experimental Design 9th place, Robot Tour 15th place, Electrical Vehicle 16th place and Helicopter 29th place in Science Olympiad National Tournament in 2026. <p>
-    My paper on summer research in Hofstra Univeristy has been accepted to <a href="www.iass-iwss2026.org">IASS-IWSS Annual Symposium</a>. <p>
-    My research on animatric hand has won the 3rd palce in LISEF (Long Island Science and Research Fair) final round. <p>
-    Very recently I have completed the basic of ASICs (application-specific integrated circuits) with multiple awards from <a href="bwsi.mit.edu">the MIT beavor</a>. <p>
-    In my spare time, I love to play piano and violin. I love reading and sewing as my hobby. <p>
-    All my projects are shared in <a href=https://github.com/jjoycex>github</a>.  <p>
-    <p><p>
-    <div><video controls width="25%"><source src="hand.mp4" type="video/mp4"></video></div>
-    <div> 3rd place in LISEF: Developed a cost efficient animatric hand for real-time sign language with on device large language model based pipeline </div>
-    <p><p>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
 
-    <div><video controls width="25%"><source src="two_layer_model.mp4" type="video/mp4"></video></div>
-    <div> Paper accepted to IASS-IWSS Annual Symposium: Co-developed two low-energy, low-waste methods for fabricating small-scale gridshell models </div>
-    <p><p>
+body {
+background-color: var(--bg);
+color: var(--text);
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+line-height: 1.65;
+font-size: 16px;
+-webkit-font-smoothing: antialiased;
+}
 
-    <div> National Science Olympiad #15: Robot Tour </div>
-    <p><p>
-    
-    <div> National Science Olympiad #16: Electrical Vehicle </div>
+.container {
+max-width: 960px;
+margin: 0 auto;
+padding: 56px 24px 80px;
+}
 
-    <div> Air Trajectory </div>
+header {
+border-bottom: 1px solid var(--border);
+padding-bottom: 36px;
+margin-bottom: 44px;
+}
 
-    <div> WAC 3rd place: Random Machine for D. Melanogaster Exposed to Simulated Microgravity </div>
+.header-top {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+flex-wrap: wrap;
+gap: 16px;
+margin-bottom: 20px;
+}
 
-    <div><video controls width="25%"><source src="magic_cane.mp4" type="video/mp4"></video></div>
-    <div> SAAWA Science Research Mini Grant Awardee: Smart Walking Stick </div>
+h1 {
+font-family: 'Newsreader', Georgia, serif;
+font-size: clamp(2.2rem, 4vw, 2.85rem);
+font-weight: 600;
+letter-spacing: -0.02em;
+color: var(--text);
+}
 
-    <div> Storm Castle </div>
+.nav-links {
+display: flex;
+gap: 12px;
+flex-wrap: wrap;
+}
 
-  </BODY>
-</HTML>
+.btn-link {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 8px 16px;
+border-radius: 999px;
+font-size: 0.9rem;
+font-weight: 500;
+text-decoration: none;
+transition: all 0.18s ease;
+border: 1px solid var(--border);
+background: var(--surface);
+color: var(--text);
+}
+
+.btn-link:hover {
+border-color: var(--accent);
+color: var(--accent);
+transform: translateY(-1px);
+}
+
+.btn-link.primary {
+background: var(--text);
+color: #ffffff;
+border-color: var(--text);
+}
+
+.btn-link.primary:hover {
+background: var(--accent);
+border-color: var(--accent);
+color: #ffffff;
+}
+
+.bio {
+display: grid;
+gap: 14px;
+color: var(--text-muted);
+font-size: 1.02rem;
+max-width: 780px;
+}
+
+.bio strong {
+color: var(--text);
+font-weight: 500;
+}
+
+.bio a {
+color: var(--accent);
+text-decoration: underline;
+text-underline-offset: 3px;
+font-weight: 500;
+}
+
+.bio a:hover {
+color: var(--accent-text);
+}
+
+.section-title {
+font-family: 'Newsreader', Georgia, serif;
+font-size: 1.65rem;
+font-weight: 600;
+margin-bottom: 20px;
+color: var(--text);
+letter-spacing: -0.01em;
+}
+
+.video-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+margin-bottom: 52px;
+}
+
+.card {
+background: var(--surface);
+border: 1px solid var(--border);
+border-radius: var(--radius);
+overflow: hidden;
+box-shadow: var(--shadow);
+display: flex;
+flex-direction: column;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 28px -4px rgba(28, 25, 23, 0.09);
+}
+
+.video-wrapper {
+background: #141210;
+width: 100%;
+aspect-ratio: 16 / 10;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+
+.video-wrapper video {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+.card-body {
+padding: 20px 22px 22px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+flex: 1;
+}
+
+.badge {
+display: inline-block;
+align-self: flex-start;
+font-size: 0.75rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.04em;
+padding: 4px 10px;
+border-radius: 6px;
+background: var(--accent-soft);
+color: var(--accent-text);
+}
+
+.card-title {
+font-size: 1.08rem;
+font-weight: 600;
+color: var(--text);
+line-height: 1.35;
+}
+
+.card-desc {
+font-size: 0.93rem;
+color: var(--text-muted);
+flex: 1;
+}
+
+.card-link {
+margin-top: 6px;
+font-size: 0.86rem;
+font-weight: 500;
+color: var(--accent);
+text-decoration: none;
+}
+
+.card-link:hover {
+text-decoration: underline;
+}
+
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 16px;
+}
+
+.project-item {
+background: var(--surface);
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 18px 20px;
+display: flex;
+flex-direction: column;
+gap: 6px;
+transition: border-color 0.18s ease;
+}
+
+.project-item:hover {
+border-color: var(--accent);
+}
+
+.project-meta {
+font-size: 0.78rem;
+font-weight: 600;
+color: var(--accent);
+text-transform: uppercase;
+letter-spacing: 0.03em;
+}
+
+.project-name {
+font-size: 1rem;
+font-weight: 600;
+color: var(--text);
+}
+
+.project-name a {
+color: inherit;
+text-decoration: none;
+}
+
+.project-name a:hover {
+color: var(--accent);
+}
+
+footer {
+margin-top: 64px;
+padding-top: 24px;
+border-top: 1px solid var(--border);
+font-size: 0.88rem;
+color: var(--text-muted);
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+footer a {
+color: var(--accent);
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+<main class="container">
+<header>
+<div class="header-top">
+<h1>Joyce Xu</h1>
+<nav class="nav-links">
+<a class="btn-link primary" href="https://github.com/jjoycex" target="_blank" rel="noopener">GitHub (@jjoycex)</a>
+<a class="btn-link" href="joyce_xu_resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+</nav>
+</div>
+
+<div class="bio">
+<p>
+I am Co-President of the <strong>Science Olympiad</strong> team at Great Neck South High School. At the 2026 Science Olympiad National Tournament, I placed <strong>9th in Experimental Design</strong>, <strong>15th in Robot Tour</strong>, <strong>16th in Electric Vehicle</strong>, and <strong>29th in Helicopter</strong>.
+</p>
+<p>
+My Hofstra University summer research paper on low-energy gridshell fabrication has been accepted to the <a href="https://www.iass-iwss2026.org" target="_blank" rel="noopener">2026 IASS-IWSS Annual Symposium</a>, and my engineering research on an assistive animatronic sign-language hand won <strong>3rd Place in the Final Round of LISEF</strong> (Long Island Science &amp; Engineering Fair).
+</p>
+<p>
+Most recently, I completed the <strong>Basics of ASICs</strong> (Application-Specific Integrated Circuits) program with multiple awards at the <a href="https://bwsi.mit.edu" target="_blank" rel="noopener">MIT Beaver Works Summer Institute (BWSI)</a>.
+</p>
+<p>
+In my spare time, I love playing the piano and violin, reading, and sewing. All of my engineering and research projects are open-sourced on <a href="https://github.com/jjoycex" target="_blank" rel="noopener">GitHub</a>.
+</p>
+</div>
+</header>
+
+<section aria-labelledby="featured-heading">
+<h2 id="featured-heading" class="section-title">Featured Research &amp; Assistive Hardware</h2>
+<div class="video-grid">
+<article class="card">
+<div class="video-wrapper">
+<video controls preload="metadata">
+<source src="hand.mp4" type="video/mp4" />
+</video>
+</div>
+<div class="card-body">
+<span class="badge">3rd Place • LISEF Final Round</span>
+<h3 class="card-title">Animatronic Hand for Real-Time Sign Language</h3>
+<p class="card-desc">
+Developed a cost-efficient 3D-printed animatronic hand for real-time American Sign Language translation powered by an on-device neural speech-to-sign pipeline.
+</p>
+<a class="card-link" href="https://github.com/jjoycex/HSR_hand" target="_blank" rel="noopener">View source on GitHub →</a>
+</div>
+</article>
+
+<article class="card">
+<div class="video-wrapper">
+<video controls preload="metadata">
+<source src="two_layer_model.mp4" type="video/mp4" />
+</video>
+</div>
+<div class="card-body">
+<span class="badge">Accepted Paper • IASS-IWSS 2026</span>
+<h3 class="card-title">Small-Scale PLA &amp; Wood Gridshell Fabrication</h3>
+<p class="card-desc">
+Co-developed two novel low-energy, low-waste methods for fabricating curved small-scale gridshell structural models.
+</p>
+<a class="card-link" href="https://www.iass-iwss2026.org" target="_blank" rel="noopener">IASS-IWSS Symposium →</a>
+</div>
+</article>
+
+<article class="card">
+<div class="video-wrapper">
+<video controls preload="metadata">
+<source src="magic_cane.mp4" type="video/mp4" />
+</video>
+</div>
+<div class="card-body">
+<span class="badge">SAAWA Mini Grant Awardee</span>
+<h3 class="card-title">Smart Walking Stick</h3>
+<p class="card-desc">
+Engineered an ultrasonic obstacle-detecting walking stick with real-time vocal alerts to assist visually impaired pedestrians.
+</p>
+<a class="card-link" href="https://github.com/jjoycex/magic_cane" target="_blank" rel="noopener">View source on GitHub →</a>
+</div>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="builds-heading">
+<h2 id="builds-heading" class="section-title">Science Olympiad &amp; Engineering Builds</h2>
+<div class="projects-grid">
+<div class="project-item">
+<span class="project-meta">National Science Olympiad • #15</span>
+<h3 class="project-name">
+<a href="https://github.com/jjoycex/robot_tour" target="_blank" rel="noopener">Robot Tour →</a>
+</h3>
+</div>
+
+<div class="project-item">
+<span class="project-meta">National Science Olympiad • #16</span>
+<h3 class="project-name">
+<a href="https://github.com/jjoycex/electrical_vehicle" target="_blank" rel="noopener">Electric Vehicle →</a>
+</h3>
+</div>
+
+<div class="project-item">
+<span class="project-meta">WAC Science Fair • 3rd Place</span>
+<h3 class="project-name">
+<a href="https://github.com/jjoycex/Random-Positioning-Device-Code" target="_blank" rel="noopener">Random Positioning Machine for <em>D. melanogaster</em> in Simulated Microgravity →</a>
+</h3>
+</div>
+
+<div class="project-item">
+<span class="project-meta">Science Olympiad Engineering</span>
+<h3 class="project-name">Air Trajectory</h3>
+</div>
+
+<div class="project-item">
+<span class="project-meta">Science Olympiad Engineering</span>
+<h3 class="project-name">Storm the Castle</h3>
+</div>
+</div>
+</section>
+
+<footer>
+<span>© 2026 Joyce Xu</span>
+<span><a href="https://github.com/jjoycex" target="_blank" rel="noopener">github.com/jjoycex</a></span>
+</footer>
+</main>
+</body>
+</html>
